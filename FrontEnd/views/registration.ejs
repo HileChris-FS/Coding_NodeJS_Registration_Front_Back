@@ -20,70 +20,76 @@
         <div class="container">
         <h1>Sign Up</h1>
         <%if(typeof (errors) != "undefined"){%>
-            <p><%-errors.message%></p>
+            <p style="color: red"><%-errors.message%></p>
             <% }%>
         <form action="/registration" method="post">
             <div>
             <label for="firstName" class="col-sm-2 col-form-label">Firstname</label>
             <input type="text" name="firstName">
             <%if(typeof (errors) != "undefined"){%>
-                <p><%-errors.firstNameMsg%></p>
+                <p style="color: red"><%-errors.firstNameMsg%></p>
             <% }%>
             </div>
             <div >
             <label for="lastName" class="col-sm-2 col-form-label">Lastname</label>
             <input type="text"  name="lastName"  >
             <%if(typeof (errors) != "undefined"){%>
-                <p><%-errors.lastNameMsg%></p>
+                <p style="color: red"><%-errors.lastNameMsg%></p>
         <% }%>
         </div>
         <div >
             <label for="address" class="col-sm-2 col-form-label">Address</label>
             <input type="text" name="address" >
             <%if(typeof (errors) != "undefined"){%>
-                <p><%-errors.addressMsg%></p>
+                <p style="color: red"><%-errors.addressMsg%></p>
         <% }%>
         </div>
             <div >
             <label for="city" class="col-sm-2 col-form-label">City</label>
             <input type="text"  name="city" >
             <%if(typeof (errors) != "undefined"){%>
-                <p><%-errors.cityMsg%></p>
+                <p style="color: red"><%-errors.cityMsg%></p>
         <% }%>
         </div>
             <div >
             <label for="state" class="col-sm-2 col-form-label">State Abbreviation</label>
             <input type="text"  name="state"  >
             <%if(typeof (errors) != "undefined"){%>
-                <p><%-errors.stateMsg%></p>
+                <p style="color: red"><%-errors.stateMsg%></p>
         <% }%>
         </div>
             <div >
             <label for="zip" class="col-sm-2 col-form-label">Zip</label>
             <input type="text"  name="zip"  >
             <%if(typeof (errors) != "undefined"){%>
-                    <p><%-errors.zipMsg%></p>
+                    <p style="color: red"><%-errors.zipMsg%></p>
             <% }%>
         </div>
             <div >
             <label for="email" class="col-sm-2 col-form-label">Email</label>
             <input type="email"  name="email" >
             <%if(typeof (errors) != "undefined"){%>
-                <p><%-errors.emailMsg%></p>
+                <p style="color: red"><%-errors.emailMsg%></p>
         <% }%>
         </div>
             <div >
             <label for="password" class="col-sm-2 col-form-label">Password</label>
             <input type="password"  name="password" >
+            <p style="font-size: 10px">1. At least one digit [0-9]</p>
+            <p style="font-size: 10px">2. At least one lowercase character [a-z]</p>
+            <p style="font-size: 10px">3. At least one uppercase character [A-Z]</p>
+            <p style="font-size: 10px">4. At least one special character [*.!@#$%^&(){}[]:;<>,.?/~_+-=|\]</p>
+            <p style="font-size: 10px">5. At least 8 characters in length, but no more than 32.</p>
             <%if(typeof (errors) != "undefined"){%>
-                <p><%-errors.passwordMsg%></p>
+                <p style="color: red"><%-errors.passwordMsg%></p>
         <%}%>
         </div>
             <div >
             <label for="cPassword" class="col-sm-2 col-form-label">Confirm Password</label>
             <input type="password"  name="confirmPassword" >
+           
             <%if(typeof (errors) != "undefined"){%>
-                <p><%-errors.confirmPasswordMsg%></p>
+                <p style="color: red"><%-errors.confirmPasswordMsg%></p>
         <% }%>
         </div>
         <button type="submit" class="btn btn-dark btn-lg" >Register</button>

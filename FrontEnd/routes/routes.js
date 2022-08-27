@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const validate = require("../validation/validation"
 )
+const api = require("../api/api")
 
 router.get("/",(req, res) => {
     res.render('index', {
@@ -43,12 +44,15 @@ router.post("/registration", (req, res) => {
         errors.message = 'Registration failed'
     }
 
-    console.log(req.body)
+    
     res.render('registration', {
         pagename: "Registration",
         errors: errors,
-        input: input,
     });
+
+    if(errors.message === "Registration Successful"){
+       api(req)
+    }
 });
 
 module.exports = router;

@@ -1,13 +1,9 @@
-
-
-
 const validate = (req) => {
   let errors = {};
 
   if(!/\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(req.body.firstName)) {
     errors.firstNameMsg =
       'Valid first name must be entered.'
-    input.first = req.body.firstName;
   } 
   if(!/\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(req.body.lastName)){
     errors.lastNameMsg =
@@ -35,7 +31,7 @@ const validate = (req) => {
   }
   if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(req.body.password)) {
       errors.passwordMsg =
-      'Password must fall under required parameters:'
+      'Password must match required parameters.'
   } 
   if(req.body.confirmPassword !== req.body.password) {
       errors.confirmPasswordMsg =
